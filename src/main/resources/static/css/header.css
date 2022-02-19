@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+.navbar{
+    background-color : #e35555;
+ }
+ .navbar-brand{
+    font-family: 'Lobster', cursive;
+ }
+  
+ li{
+   font-size:20px;
+ }

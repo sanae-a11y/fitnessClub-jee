@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html xmlns:th="wwww.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/style.css"  >
+<meta charset="UTF-8"/>
+<title>Single book</title>
+</head>
+<body>
+  <header>
+ 
+        <ul class="header">
+        <li ><img class="logo" src="/logo.png" alt="logo" ></img></li>
+        <li class="li"><a href="/">Home </a></li>
+         <li class="li"><a href="#">Our Books</a></li>
+        <li class="li"><a href="#">About Us </a></li>
+       
+        
+       
+    </ul>
+    
+    
+    </header>
+    
+   
+    
+    <section class="container">
+    
+    <div class="divImg">
+    <img class="imgbook" th:src=@{${book.image}} alt="imgBook" width="400px" height="500px"></img>
+    </div>
+    <div class="bookDesc">
+     <h1 class="title" th:text=${book.title}></h1>
+    
+    
+    <h2 class="author" th:text=By+${book.author}> </h2>
+    <p class="desc" th:text=${book.desc}> </p>
+       <button  >Read Book</button>
+       <button  >Download Book</button>
+       
+    
+       
+   
+    </div>
+   
+    </section>
+    
+    
+    
+ 
+    <footer class="copyright">
+    <p class="para">© 2022 ENSAM - CASABLANCA. All rights reserved.
+
+                <BR>Kids Library</p>
+   
+    </footer>
+</body>
+
+</HTML>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="wwww.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</head>
+<style>
+  .form-group{
+     width:600px;
+     margin-top: 1rem;
+     margin-buttom:1rem;
+  }
+  .label{
+      align:left;
+  }
+  .btn {
+  margin-top:2rem;
+  margin-left:3px;
+  }
+  .content {
+      margin-top:50px;
+      margin-left:50px;
+      border:1px;
+  } 
+ .navbar{
+    background-color : #e35555;
+ }
+ .navbar-brand{
+    font-family: 'Lobster', cursive;
+ }
+ img{
+    height:500px;
+ }
+ .card-img-top{
+   height: 300px;
+ }
+ .card{
+   margin-left:3rem;
+ }
+ 
+ .row{
+   width:500px;
+   padding:3rem;
+ }
+  a{
+     text-decoration:none;
+     color:white;
+  }
+
+</style>
+<body>
+       <nav class="navbar navbar-expand-lg navbar-light  ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fitness Club</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/admin">Acceuil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/activite">Activites</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/activite">Centres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">D&eacute;connecter</a>
+        </li>
+         
+       
+      </ul>
+     
+    </div>
+  </div>
+</nav>
+    <div  align="center">
+       <h3>Ajouter un Adherent </h3>
+       <br>
+       <form  action="#" th:action="@{/save_adh}" th:object="${adherent}" method="post">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Nom</label>
+      <input   type="text" th:field="*{nom}" class="form-control" id="inputEmail4" placeholder="Nom...">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Pr&eacute;nom</label>
+      <input type="text" th:field="*{prenom}" class="form-control" id="inputPassword4" placeholder="Prenom ...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Password</label>
+    <input type="password" th:field="*{password}" class="form-control" id="inputAddress" placeholder="******">
+  </div>
+  
+    <div class="form-group col-md-4">
+      <label for="inputState">Sexe</label>
+      <select id="inputState"  th:field="*{sexe}" class="form-control">
+          <option value="">--Sexe--</option>
+		  <option value="F">Femme</option>
+		  <option value="H">Homme</option>
+      </select>
+    </div>
+     
+  <button type="submit" class="btn btn-danger">Ajouter</button>
+</form>
+ 
+       
+    </div>
+
+</body>
+</html>
